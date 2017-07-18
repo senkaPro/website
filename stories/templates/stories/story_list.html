@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Stories | {{block.super}}{% endblock %}
+{% block main %}
+{% if stories %}
+{% for story in stories %}
+  <div class="panel panel-default">
+    <div class='panel-heading'><h3>{{story}}</h3></div>
+    <div class="panel-body">
+          {{story.story_text}}
+    </div>
+    <div class="panel-footer">published: <time>{{story.last_edited}}</time></div>
+  </div>
+{% endfor %}
+{% endif %}
+{% endblock %}
